@@ -14,9 +14,7 @@ public class configLoader {
             properties = propertyUtils.propertyLoader("src/test/resources/prod_config.properties");
         }else if (env.equals(String.valueOf(EnvType.STAGE))){
             properties = propertyUtils.propertyLoader("src/test/resources/stage_config.properties");
-        }else{
-            throw new IllegalStateException("INVALID ENV: " + env);
-        }
+        }else{throw new IllegalStateException("INVALID ENV: " + env);}
     }
 
     public static configLoader getInstance() {
