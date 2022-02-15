@@ -10,17 +10,19 @@ public class DriverFactory {
     public static WebDriver initializeDriver(String browser){
         WebDriver driver;
         switch (browser) {
-            case "chrome" -> {
+            case "chrome": {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
+                driver.manage().window().maximize();
+                return driver;
             }
-            case "firefox" -> {
+            case "firefox": {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
+                driver.manage().window().maximize();
+                return driver;
             }
-            default -> throw new IllegalStateException("INVALID BROWSER: " + browser);
+            default: throw new IllegalStateException("INVALID BROWSER: " + browser);
         }
-        driver.manage().window().maximize();
-        return driver;
     }
 }

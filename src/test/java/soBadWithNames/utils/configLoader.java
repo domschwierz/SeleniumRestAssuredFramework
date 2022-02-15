@@ -10,10 +10,12 @@ public class configLoader {
 
     private configLoader(){
         String env = System.getProperty("env", String.valueOf(EnvType.STAGE));
-        switch (EnvType.valueOf(env)){
-            case PROD -> properties = propertyUtils.propertyLoader("src/test/resources/prod_config.properties");
-            case STAGE -> properties = propertyUtils.propertyLoader("src/test/resources/stage_config.properties");
-            default -> throw new IllegalStateException("INVALID ENV: " + env);
+        if(env.equals(String.valueOf(EnvType.PROD))){
+            properties = propertyUtils.propertyLoader("src/test/resources/prod_config.properties");
+        }else if (env.equals(String.valueOf(EnvType.STAGE))){
+            properties = propertyUtils.propertyLoader("src/test/resources/stage_config.properties");
+        }else{
+            throw new IllegalStateException("INVALID ENV: " + env);
         }
     }
 

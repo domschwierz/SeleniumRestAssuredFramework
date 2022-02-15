@@ -1,6 +1,6 @@
 Feature: Place an order
 
-  @runThisSc
+  @runThisSc @smoke
   Scenario: Using default payment option
     Given I am a guest customer
     And my billing details are

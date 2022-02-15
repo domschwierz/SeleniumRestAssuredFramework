@@ -1,5 +1,5 @@
 Feature: Add to cart
-  @smoke
+
   Scenario Outline: Add one item to the cart
     Given I'm on the Store page
     When I add a "<product_name>" to the cart
