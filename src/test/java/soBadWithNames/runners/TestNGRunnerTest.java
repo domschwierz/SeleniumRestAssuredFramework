@@ -7,7 +7,8 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         glue = {"soBadWithNames"},
         features = "src/test/resources/soBadWithNames",
-        plugin = {"html:target/cucumber/cucumber.html"}
+        plugin = {"html:target/cucumber/cucumber.html"},
+        tags = "@smoke"
 )
 public class TestNGRunnerTest extends AbstractTestNGCucumberTests {
 
