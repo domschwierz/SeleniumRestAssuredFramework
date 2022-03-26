@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 public class MyHooks {
     private WebDriver driver;
     private final testContext context;
+    String lol;
 
     public MyHooks(testContext context){
         this.context = context;
