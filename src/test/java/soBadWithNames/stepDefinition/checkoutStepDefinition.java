@@ -37,4 +37,6 @@ public class checkoutStepDefinition {
     public void iAmOnTheCheckoutPage() {
         checkoutPage.load(EndPoint.CHECKOUT.url);
     }
+
+
 }
